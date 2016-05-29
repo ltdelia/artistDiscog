@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var PORT = process.env.PORT || 8080;
 
 //Database configuration
 var mongojs = require('mongojs');
@@ -12,6 +13,8 @@ db.on('error', function(err) {
 
 app.use(express.static('public'));
 
-app.listen(8080, function() {
-  console.log('App running on port 8080!');
+require("./controllers/controller.js")(app);
+
+app.listen(PORT, function() {
+  console.log('App running on port ' + PORT + ' !');
 });
