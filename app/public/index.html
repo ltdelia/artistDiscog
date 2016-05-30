@@ -21,8 +21,8 @@
 				<p>An app dedicated to the discography of Randy Newman.</p>
 			</div>
 		</div>
-
-		<a class="btn btn-primary" data-toggle="modal" href='#modal-id2'>How the modal should behave</a>
+		
+		<!-- Modal for Leaving Comments re: selected album -->
 		<div class="modal fade" id="modal-id">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -37,15 +37,40 @@
 						<form>
 							<div class="form-group">
 								<label>New Comment</label>
-								<input type="text" class="form-control">
+								<input type="text" class="form-control" id="comment-title">
 							</div>
 							<div class="form-group">
 								<label>Enter your comment here</label>
-								<textarea class="form-control"></textarea>
+								<textarea class="form-control" id="comment-body"></textarea>
 							</div>
 						</form>
 					</div>
 					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button class="btn btn-primary" id="savenote" data-dismiss="modal">Save Note</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Modal to View Comments Posted -->
+		<div class="modal fade" id="viewcomments">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title">Comments Related To: </h4>
+						<h5 class="modal-title" id="title"></h5>	
+					</div>
+					<div class="modal-body">
+						<div class="well">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 id="comment-header"></h4>
+							<h5 id="comment-text"></h5>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 					</div>
 				</div>
 			</div>
@@ -65,7 +90,6 @@
 			</tbody>
 		</table>
 		
-		<div id="noteModal"></div>
 
 	</div>
 </body>
