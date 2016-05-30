@@ -14,7 +14,11 @@ var ArtistSchema = new Schema({
 	format:{
 		type: String
 	},
+	note: {
+      type: Schema.Types.ObjectId,
+      ref: 'Note'
+  	}
 });
 
-var Artist = mongoose.model('Artist', ArtistSchema);
-module.exports = Artist;
+var Album = mongoose.model('Album', ArtistSchema);
+module.exports = Album;
