@@ -22,6 +22,35 @@
 			</div>
 		</div>
 
+		<a class="btn btn-primary" data-toggle="modal" href='#modal-id2'>How the modal should behave</a>
+		<div class="modal fade" id="modal-id">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title" id="album"></h4>
+						<h5 class="modal-title" id="date"></h5>
+						<h5 class="modal-title" id="label"></h5>
+						<h5 class="modal-title" id="format"></h5>	
+					</div>
+					<div class="modal-body">
+						<form>
+							<div class="form-group">
+								<label>New Comment</label>
+								<input type="text" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>Enter your comment here</label>
+								<textarea class="form-control"></textarea>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<table class="table table-hover">
 			<thead>
 				<tr>
@@ -35,6 +64,9 @@
 			<tbody id="albums">
 			</tbody>
 		</table>
+		
+		<div id="noteModal"></div>
+
 	</div>
 </body>
 <script src="static/assets/js/app.js"></script>

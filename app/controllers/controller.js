@@ -5,6 +5,7 @@ var cheerio = require('cheerio');
 var path = require('path');
 //Require Schema
 var Album = require('../models/album.js');
+var Note = require('../models/note.js');
 
 
 module.exports = function(app){
