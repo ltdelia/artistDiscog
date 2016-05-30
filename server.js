@@ -1,17 +1,16 @@
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
+var logger = require('morgan');
+var mongoose = require('mongoose');
 var PORT = process.env.PORT || 8080;
 
-//Database configuration
-var mongojs = require('mongojs');
-var databaseUrl = "zoo";
-var collections = ["animals"];
-var db = mongojs(databaseUrl, collections);
-db.on('error', function(err) {
-  console.log('Database Error:', err);
-});
-
+app.use(logger('dev'));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 app.use(express.static('public'));
+
 
 require("./controllers/controller.js")(app);
 
