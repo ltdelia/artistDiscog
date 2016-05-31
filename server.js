@@ -25,7 +25,7 @@ staticContentFolder = __dirname + '/app/public';
 app.use('/static', express.static(staticContentFolder));
 
 //Database configuration
-mongoose.connect('mongodb://heroku_user0000:passw0rd@ds033107.mlab.com:33107/heroku_46xzckfx');
+mongoose.connect('mongodb://heroku_user_test_123:password123@ds033107.mlab.com:33107/heroku_46xzckfx');
 var db = mongoose.connection;
 
 db.on('error', function(err) {
