@@ -25,7 +25,7 @@ staticContentFolder = __dirname + '/app/public';
 app.use('/static', express.static(staticContentFolder));
 
 //Database configuration
-mongoose.connect('mongodb://localhost/albumscraper');
+mongoose.connect('mongodb://artistdiscog:artistdisc0g@ds019893.mlab.com:19893/artistdiscog');
 var db = mongoose.connection;
 
 db.on('error', function(err) {
