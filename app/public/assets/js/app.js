@@ -1,3 +1,4 @@
+// GET Request to populate the table in the HTML
 $.getJSON('/albums', function(data) {
   for (var i = 0; i<data.length; i++){
     $('#albums').append('<tr><td>'+ data[i].album + '</td><td>'+ data[i].date + '</td><td>'+ data[i].label + '</td><td>'+ data[i].format + '</td><td><button data-id="' + data[i]._id + '" data-toggle="modal" href="#viewcomments" id="see" class="btn btn-primary">View Comments</button></td><td><button data-id="' + data[i]._id + '" data-toggle="modal" href="#modal-id" id="note" class="btn btn-default">Comment</button></td></tr>');
@@ -21,6 +22,8 @@ $(document).on('click', '#note', function(){
       $('#label').html(data.label);
       $('#format').html(data.format);
       $('#savenote').attr('data-id', data._id);
+      $('#trash').attr('data-id', data._id);      
+
 
 
       if(data.note){
@@ -69,5 +72,22 @@ $(document).on('click', '#see', function(){
     });
 });
 
+// Click Event to Delete Comments
+$(document).on('click', '#trash', function(){
+  var thisId = $(this).attr('data-id');
+
+  $.ajax({
+    method: "POST",
+    url: "/albums/" + thisId,
+    data: {
+      title: "",
+      body: ""
+    }
+  })
+    .done(function( data ) {
+      console.log(data);
+    });
+
+});
 
 
